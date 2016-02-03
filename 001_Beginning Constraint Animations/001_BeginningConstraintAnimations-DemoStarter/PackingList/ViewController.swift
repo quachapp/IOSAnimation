@@ -29,6 +29,7 @@ class ViewController: UIViewController {
   @IBOutlet var tableView: UITableView!
   @IBOutlet var buttonMenu: UIButton!
   @IBOutlet var titleLabel: UILabel!
+  @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
   
   //MARK: further class variables
   
@@ -40,7 +41,11 @@ class ViewController: UIViewController {
   
   @IBAction func actionToggleMenu(sender: AnyObject) {
     isMenuOpen = !isMenuOpen
-    
+    menuHeightConstraint.constant = isMenuOpen ? 200 : 60
+    titleLabel.text = isMenuOpen ? "Select Item" : "Packing List"
+    UIView.animateWithDuration(0.33, delay: 0, options: [.CurveEaseInOut], animations: {
+        self.view.layoutIfNeeded() //Look at all the view and check if any of the constraint has been change
+    }, completion: nil)
   }
   
   func showItem(index: Int) {
