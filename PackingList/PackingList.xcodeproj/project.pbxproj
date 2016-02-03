@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182ADEF61C6190D800D8AC42 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182ADEF51C6190D800D8AC42 /* Default-568h@2x.png */; };
 		9C7090651A12023F0075390C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7090641A12023F0075390C /* AppDelegate.swift */; };
 		9C7090671A12023F0075390C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7090661A12023F0075390C /* ViewController.swift */; };
 		9C70906A1A12023F0075390C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7090681A12023F0075390C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182ADEF51C6190D800D8AC42 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C70905F1A12023F0075390C /* PackingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7090631A12023F0075390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7090641A12023F0075390C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		9C7090561A12023F0075390C = {
 			isa = PBXGroup;
 			children = (
+				182ADEF51C6190D800D8AC42 /* Default-568h@2x.png */,
 				9C7090611A12023F0075390C /* PackingList */,
 				9C7090601A12023F0075390C /* Products */,
 			);
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C70906A1A12023F0075390C /* Main.storyboard in Resources */,
+				182ADEF61C6190D800D8AC42 /* Default-568h@2x.png in Resources */,
 				9C70906F1A12023F0075390C /* LaunchScreen.xib in Resources */,
 				9C70906C1A12023F0075390C /* Images.xcassets in Resources */,
 			);
@@ -273,6 +277,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};
