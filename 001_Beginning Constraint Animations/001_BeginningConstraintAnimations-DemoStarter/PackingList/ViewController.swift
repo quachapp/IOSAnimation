@@ -30,6 +30,7 @@ class ViewController: UIViewController {
   @IBOutlet var buttonMenu: UIButton!
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var closeButtonTrailing: NSLayoutConstraint!
   
   //MARK: further class variables
   
@@ -41,9 +42,16 @@ class ViewController: UIViewController {
   
   @IBAction func actionToggleMenu(sender: AnyObject) {
     isMenuOpen = !isMenuOpen
-    menuHeightConstraint.constant = isMenuOpen ? 200 : 60
+    menuHeightConstraint.constant = isMenuOpen ? 200.0 : 60.0
+    closeButtonTrailing.constant = isMenuOpen ? 16.0 : 8.0
     titleLabel.text = isMenuOpen ? "Select Item" : "Packing List"
     UIView.animateWithDuration(0.33, delay: 0, options: [.CurveEaseInOut], animations: {
+        // This code creates a local constant angle and sets it to 45 degrees or 0 degress depending on whether the menu is currently open.
+       // Now the + button becomes a x button when the menu is open, which makes it more clear to the user what the current function of the button is.
+        let angle = self.isMenuOpen ? CGFloat(M_PI_4) : 0
+        self.buttonMenu.transform = CGAffineTransformMakeRotation(angle)
+        //This code fades in the packing items slider control when the menu opens and fades it out when you close the menu.
+        self.slider.alpha = self.isMenuOpen ? 1 : 0
         self.view.layoutIfNeeded() //Look at all the view and check if any of the constraint has been change
     }, completion: nil)
   }
